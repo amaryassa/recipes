@@ -8,7 +8,7 @@
             class="btn btn-success"
             [disabled]="!recipeForm.valid"
             >Save</button>
-          <button type="button" class="btn btn-danger">Cancel</button>
+          <button (click)="onCancel()"  type="button" class="btn btn-danger">Cancel</button>
         </div>
       </div>
       <div class="row">
@@ -23,13 +23,13 @@
         <div class="col-xs-12">
           <div class="form-group">
             <label for="imagePath">Image URL</label>
-            <input formControlName="imagePath" type="text" id="imagePath" class="form-control">
+            <input #imagePath formControlName="imagePath" type="text" id="imagePath" class="form-control">
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <img src="" class="img-responsive">
+          <img [src]="imagePath.value" class="img-responsive" style="max-width: 50px;">
         </div>
       </div>
       <div class="row">
@@ -45,7 +45,7 @@
           <div
           style="margin-top:10px;"
           class="row"
-          *ngFor="let ingredientCtrl of getControls(); let i = index"
+          *ngFor="let ingredientCtrl of controls; let i = index"
           [formGroupName]="i"
           >
             <div class="col-xs-8">
@@ -63,18 +63,23 @@
               >
             </div>
             <div class="col-xs-2">
-              <button class="btn btn-danger">X</button>
+              <button
+              (click)="onDeleteIngredient(i)"
+              type="button"
+              class="btn btn-danger">X</button>
             </div>
           </div>
           <hr>
           <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-6">
               <button class="btn btn-success" type="button" (click)="onAddIngredient()" >add Ingredient</button>
             </div>
+            <div class="col-xs-16">
+              <button *ngIf="lengthIngridient"  class="btn btn-danger" type="button" (click)="onDeleteAllIngredients()" >DELETE All Ingredients</button>
+            </div>
+
           </div>
         </div>
-
-
 
       </div>
     </form>
