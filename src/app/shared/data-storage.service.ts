@@ -32,7 +32,6 @@ export class DataStorageService {
         'https://mybooks-abc71.firebaseio.com/recipes.json'
       )
       .pipe(
-
         map(recipes => {
           return recipes.map(recipe => {
             return { ...recipe, ingridents: recipe.ingredients ? recipe.ingredients : [] };

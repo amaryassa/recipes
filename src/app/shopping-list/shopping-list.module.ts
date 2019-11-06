@@ -4,7 +4,7 @@ import { ShoppingListComponent } from './shopping-list.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
     declarations: [
         ShoppingListComponent,
@@ -12,11 +12,11 @@ import { CommonModule } from '@angular/common';
     ],
 
     imports: [
-        CommonModule,
         FormsModule,
         RouterModule.forChild([
-            { path: 'shopping-list', component: ShoppingListComponent }
-          ])
+            { path: '', component: ShoppingListComponent }
+          ]),
+          SharedModule
     ],
     exports: []
 })
