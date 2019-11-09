@@ -9,8 +9,8 @@ export class ShoppingListService {
 
 
   private ingredients: Ingredient[] = [
-    new Ingredient('Tomate', 10),
-    new Ingredient('banane', 15)
+    new Ingredient('lala', 10),
+    new Ingredient('lili', 15)
   ];
 
 
