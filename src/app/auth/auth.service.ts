@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Router } from '@angular/router';
 import { User } from './user.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
@@ -25,19 +26,28 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
   signUp(email: string, password: string) {
     return this.http.post<AuthResponseData>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyD40p8090LApvTl2wlsBfHs4NkN6-CspOo',
+      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + environment.firebaseAPIKey,
       {
         email: email,
         password: password,
         returnSecureToken: true
       }
-    ).pipe(catchError(this.handleError));
+    ).pipe(catchError(this.handleError),
+      tap(resdata => {
+        this.handleAuthentification(
+          resdata.email,
+          resdata.localId,
+          resdata.idToken,
+          +resdata.expiresIn
+        );
+      })
+    );
   }
 
 
   login(email: string, password: string) {
     return this.http.post<AuthResponseData>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyD40p8090LApvTl2wlsBfHs4NkN6-CspOo',
+      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + environment.firebaseAPIKey,
       {
         email: email,
         password: password,
@@ -107,6 +117,7 @@ export class AuthService {
       token,
       dateExpiration
     );
+
     this.user.next(user);
     this.autoLogout(expiresIn * 1000);
     localStorage.setItem('userData', JSON.stringify(user));
