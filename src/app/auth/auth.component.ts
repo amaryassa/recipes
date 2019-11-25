@@ -6,7 +6,7 @@ import { AlertComponent } from '../shared/alert/alert.component';
 import { PlaceholderDirective } from '../shared/placeholder/placeholder.directive';
 
 import * as fromApp from '../store/app.reducer';
-import * as AuthActions from './store/auth.action';;
+import * as AuthActions from './store/auth.actions';;
 
 @Component({
   selector: 'app-auth',

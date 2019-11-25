@@ -37,7 +37,8 @@ export class AutentificateSuccess implements Action {
       email: string,
       userId: string,
       token: string,
-      dateExpiration: Date
+      dateExpiration: Date,
+      redirect: boolean,
     }
   ) { }
 }

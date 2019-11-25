@@ -1,3 +1,4 @@
+import { RecipesEffects } from './recipes/store/recipe.effects';
 import { environment } from './../environments/environment';
 import { AuthEffects } from './auth/store/auth.effects';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,7 +29,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     HttpClientModule,
     AppRoutingModule,
     StoreModule.forRoot(fromApp.appReducer),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects, RecipesEffects]),
     StoreDevtoolsModule.instrument({logOnly: environment.production}),
     StoreRouterConnectingModule.forRoot(),
     SharedModule,

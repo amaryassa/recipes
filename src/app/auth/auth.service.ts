@@ -2,7 +2,7 @@ import { Store } from '@ngrx/store';
 import { Injectable } from '@angular/core';
 
 import * as fromApp from '../store/app.reducer';
-import * as AuthActions from './store/auth.action';
+import * as AuthActions from './store/auth.actions';
 
 
 @Injectable({
