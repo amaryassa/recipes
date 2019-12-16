@@ -3,7 +3,7 @@
 
 [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
 
-##Tutorial link Udemy
+## Tutorial link Udemy
 [https://www.udemy.com/course/the-complete-guide-to-angular-2/](https://www.udemy.com/course/the-complete-guide-to-angular-2/)
 ### Avec Ngrx (redux) 
 ``` git clone  https://github.com/amaryassa/recipes ```
