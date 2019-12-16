@@ -1,7 +1,8 @@
 # Recette 
-[demo](https://mybooks-abc71.firebaseapp.com/)
 
-[Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+## Demo
+[https://mybooks-abc71.firebaseapp.com/](https://mybooks-abc71.firebaseapp.com/)
+
 
 ## Tutorial link Udemy
 [https://www.udemy.com/course/the-complete-guide-to-angular-2/](https://www.udemy.com/course/the-complete-guide-to-angular-2/)
@@ -11,6 +12,7 @@
 ``` git clone -b sans_ngrx https://github.com/amaryassa/recipes ```
 
 
+[Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
 
 # Les fonctionnalités utilisées :
 ## Ngrx
